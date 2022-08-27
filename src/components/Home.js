@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import {useNavigate} from "react-router-dom"
+import { useState } from "react";
 
 import images from '../images/idd.webp';
 import lg1 from '../images/lg1.webp';
@@ -20,6 +21,9 @@ import email from '../images/email.png';
 const Home = () => {
 
     const navigate = useNavigate();
+
+    const [color, setColor] = useState('#FFFFFF');
+
     return (
 <div>
 
@@ -46,11 +50,11 @@ const Home = () => {
 
 
 <div class="container mx-auto mt-10 flex flex-wrap justify-center columns-2 gap-5">
-    <div class="border rounded-lg">
+    <div class="border rounded-lg" style={{backgroundColor: `${color}` }}>
         <p class="text-center my-5 font-semibold hover:underline">LG V30 PLUS</p>
         <img src={lg1} class="w-30 h-60 mb-5" alt="upload"/>
     </div>
-    <div class="border rounded-lg">
+    <div class="border rounded-lg" style={{backgroundColor: `${color}` }}>
         <p class="text-center my-5 font-semibold hover:underline" >LG G7+ThinQ</p>
         <a href="detail.html">
         <img src={lg2} class="w-30 h-60 mb-5" alt="upload"/></a>
@@ -66,7 +70,12 @@ const Home = () => {
         <hr class="border-t-1 mb-5 mx-10"/>
         <a href="#" class="text-sm text-center underline cursor-pointer text-slate-400" >Hapus Semua Saringan
         </a>
-        <p class="mt-2 font-semibold">Produk Diskontinu - </p>
+        <p class="mt-2 mb-5 font-semibold">Produk Diskontinu - </p>
+        <button onClick={() => setColor("#b03060")} 
+        class="mr-2 text-sm font-medium px-5 py-1 ring-red-800 ring-2 rounded-full text-red-600
+         hover:text-white hover:bg-red-800">Color Mode</button>
+        <button onClick={() => setColor("#FFFFFF")} class="text-sm font-medium px-5 py-1
+         ring-slate-800 ring-2 rounded-full text-slate-600 hover:bg-slate-800 hover:text-slate-50">Normal Mode</button>
     </div>
 
 	<div class="box col-span-2 box  bg-slate-100 flex flex-wrap justify-between items-center px-5 mr-36">
@@ -96,7 +105,7 @@ const Home = () => {
 
         <div class="container mx-auto mt-1 flex flex-wrap justify-start columns-3 gap-4">
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
@@ -128,7 +137,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
@@ -164,7 +173,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
@@ -210,7 +219,7 @@ const Home = () => {
 
         <div class="container mx-auto mt-1 flex flex-wrap justify-start columns-3 gap-4">
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
@@ -242,7 +251,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
@@ -280,7 +289,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="border rounded-lg p-2">
+            <div class="border rounded-lg p-2" style={{backgroundColor: `${color}` }}>
                 <div class="container flex flex-wrap m-auto justify-end columns-1 my-1">
                     <img src={heart} class="my-1 w-4 h-4 mb-5 hover:ring-1 hover:ring-red-600" alt="star"/>
                 </div>
