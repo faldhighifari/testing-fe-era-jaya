@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import {useNavigate} from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import images from '../images/idd.webp';
 import lg1 from '../images/lg1.webp';
@@ -24,6 +24,16 @@ const Home = () => {
 
     const [color, setColor] = useState('#FFFFFF');
 
+    const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1000);
+    }, 1000);
+  });
+
+   
+
     return (
 <div>
 
@@ -44,7 +54,7 @@ const Home = () => {
     
 
     <div class="my-auto ml-[940px]">
-        <button onClick={()=>navigate("/detail")} class="text-sm font-medium px-7 py-3 bg-pink-700  rounded text-white hover:bg-pink-600 my-3">SELENGKAPNYA</button>
+        <button onClick={()=> count > 25000 ? navigate("/detail") : navigate("/")} class="text-sm font-medium px-7 py-3 bg-pink-700  rounded text-white hover:bg-pink-600 my-3">SELENGKAPNYA</button>
     </div>
 </div>
 
@@ -70,7 +80,7 @@ const Home = () => {
         <hr class="border-t-1 mb-5 mx-10"/>
         <a href="#" class="text-sm text-center underline cursor-pointer text-slate-400" >Hapus Semua Saringan
         </a>
-        <p class="mt-2 mb-5 font-semibold">Produk Diskontinu - </p>
+        <p class="mt-2 mb-5 font-semibold">Produk Diskontinu - {count}</p>
         <button onClick={() => setColor("#b03060")} 
         class="mr-2 text-sm font-medium px-5 py-1 ring-red-800 ring-2 rounded-full text-red-600
          hover:text-white hover:bg-red-800">Color Mode</button>
